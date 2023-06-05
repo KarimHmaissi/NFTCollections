@@ -1,0 +1,166 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.root {
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  aspect-ratio: 1.9/1;
+}
+
+.root:hover .coverImage {
+  transform: scale(1.01);
+}
+
+.coverImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transform-origin: 0 0;
+  transition: transform 0.55s, visibility 0.25s ease-in;
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  padding: 30px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.59) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+  transition: opacity 0.25s;
+}
+
+.dataTextValue {
+  transition: transform 0.25s ease-in;
+}
+
+.dataWrapper:hover .data:not(:hover) {
+  opacity: 0.7;
+}
+
+.dataWrapper:hover .dataTextValue {
+  transform: scale(1.05);
+}
+
+.dataWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+}
+
+.data-text {
+  font-size: 1.9rem;
+  transition: transform 0.25s;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.coverImage:hover {
+  transform: scale(2);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.thumbnail {
+  border-radius: 20px;
+}
+
+.thumbnailWrapper {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+  border-radius: 20px;
+  padding: 8px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
+
+  transition: transform 0.25s, visibility 0.25s ease-in;
+}
+
+.thumbnailWrapper:hover {
+  transform: scale(1.05);
+}
+
+.verifiedIcon {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 0.5rem;
+}
+
+.uncommonLink {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 30px;
+  color: white;
+  opacity: 0.7;
+  font-size: 2.4rem;
+  cursor: context-menu;
+  transition: opacity 0.25s ease-in;
+}
+
+.uncommonLink:hover {
+  opacity: 0.8;
+}
+
+.rockingHand {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  font-size: 4rem;
+}
+
+.ethIcon {
+  height: 1.4rem;
+  width: 1.4rem;
+  color: #858585;
+}

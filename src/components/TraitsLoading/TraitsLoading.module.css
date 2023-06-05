@@ -1,0 +1,20 @@
+.root {
+  max-width: 508px;
+}
+
+.traitLoadingWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.imageLoading {
+  margin-right: 20px;
+}
+
+.data {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  margin-right: 20px;
+}

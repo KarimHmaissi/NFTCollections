@@ -1,0 +1,10 @@
+.root {
+  margin-top: 32px;
+}
+
+.divider {
+  margin-top: 24px;
+  margin-bottom: 46px;
+  border-color: #8f9092;
+  /* //TODO fix this */
+}

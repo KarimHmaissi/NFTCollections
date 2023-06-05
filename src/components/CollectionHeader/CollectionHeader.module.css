@@ -1,0 +1,56 @@
+.root {
+  margin-bottom: 28px;
+}
+
+.header {
+  display: flex;
+}
+
+.name {
+  margin-bottom: 10px;
+}
+
+.headerDetails {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.headerDetailsExtended {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-end;
+  margin-bottom: 13px;
+}
+
+.thumbnail {
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.brand {
+  margin-right: 38px;
+}
+
+.finDetails {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dataTitle {
+  font-weight: 700;
+}
+
+.percentage {
+  margin-left: 8px;
+}
+
+@media (min-width: 600px) {
+  .name {
+    margin-bottom: 15px;
+  }
+}

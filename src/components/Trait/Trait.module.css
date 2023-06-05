@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+}
+
+.items {
+  margin-left: auto;
+}
+
+.thumbnail {
+  border-radius: 8px;
+  margin-right: 20px;
+}
