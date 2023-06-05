@@ -13,6 +13,7 @@ interface TraitsProps {
 
 export const Traits = ({ traits }: TraitsProps) => {
   const [selectedOption, setSelectedOption] = useState("Trait floor");
+  console.log("Rendering", selectedOption);
 
   const handleSortChange = (event: SelectChangeEvent<string>) => {
     setSelectedOption(event.target.value);
@@ -78,8 +79,8 @@ export const Traits = ({ traits }: TraitsProps) => {
       </Typography>
 
       <ul className={styles.traitList}>
-        {sortedItems.map((trait) => (
-          <li className={styles.traitListItem} key={trait.thumbnail}>
+        {sortedItems.map((trait, index) => (
+          <li className={styles.traitListItem} key={trait.thumbnail + index}>
             <Trait traitType={trait.category} trait={trait} />
           </li>
         ))}

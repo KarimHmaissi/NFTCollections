@@ -33,8 +33,23 @@
 }
 
 .brand {
-  margin-right: 38px;
   font-weight: 700;
+  position: relative;
+  padding-right: 38px;
+}
+
+.brand:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 4px;
+  width: 4px;
+  background-color: var(--grey600);
+  margin: auto;
+  margin-right: 16px;
+  border-radius: 50%;
 }
 
 .finDetails {

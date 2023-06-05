@@ -3,13 +3,13 @@ import Typography from "@mui/material/Typography";
 import Image from "next/image";
 
 import { Collection } from "nftCollections/services/getCollection";
-import styles from "./CollectionHeader.module.css";
-import { Eth, VerifiedIcon } from "../Icons";
 import {
   convertToPercentage,
   formatDate,
   formatEtherValue,
 } from "nftCollections/utils";
+import styles from "./CollectionHeader.module.css";
+import { Eth, VerifiedIcon } from "../Icons";
 
 interface CollectionHeaderProps {
   collection: Collection;

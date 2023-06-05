@@ -1,1 +1,2 @@
-export * from "./getCollections";
+export * from "./getCollection";
+export * from "./getTraits";

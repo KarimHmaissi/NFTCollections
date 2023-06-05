@@ -13,7 +13,7 @@ export const prefetchCollection = async (collectionId: string) => {
 
 export const useGetCollection = (
   collectionId: string,
-  queryOptions?: UseQueryOptions<any, any, Collection> // TODO - remove any type here
+  queryOptions?: UseQueryOptions<any, any, Collection>
 ) => {
   const queryKey = ["collection", collectionId];
 

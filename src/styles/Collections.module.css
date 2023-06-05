@@ -5,14 +5,12 @@
 .divider {
   margin-top: 24px;
   margin-bottom: 46px;
-  border-color: #8f9092;
-  /* //TODO fix this */
+  border-color: var(--grey600);
 }
 
 @media (max-width: 640px) {
   .divider {
     margin-top: 38px;
     margin-bottom: 32px;
-    border-color: #8f9092;
   }
 }

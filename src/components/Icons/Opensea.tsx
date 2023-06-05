@@ -7,7 +7,7 @@ export const Opensea = ({
   className?: string;
 }) => (
   <SvgIcon className={className} width="1rem" height="1rem" viewBox="0 0 12 13">
-    <g clip-path="url(#clip0_1012_26712)">
+    <g clipPath="url(#clip0_1012_26712)">
       <path
         d="M12 6.5C12 9.81352 9.31352 12.5 6 12.5C2.68648 12.5 0 9.81352 0 6.5C0 3.18648 2.68648 0.5 6 0.5C9.31421 0.5 12 3.18648 12 6.5Z"
         fill="#2081E2"

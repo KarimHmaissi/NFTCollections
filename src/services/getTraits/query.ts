@@ -11,7 +11,7 @@ export const prefetchTraits = async (collectionId: string) => {
 
 export const useGetTraits = (
   collectionId: string,
-  queryOptions?: UseQueryOptions<any, any, TraitsResponse> // TODO - remove any type here
+  queryOptions?: UseQueryOptions<any, any, TraitsResponse>
 ) => {
   const queryKey = ["traits", collectionId];
 
@@ -20,6 +20,7 @@ export const useGetTraits = (
     queryFn: () => getTraits(collectionId),
     refetchOnMount: false,
     staleTime: 1000 * 1000,
+    refetchInterval: 1000 * 30,
     refetchOnWindowFocus: false,
     ...queryOptions,
   });
