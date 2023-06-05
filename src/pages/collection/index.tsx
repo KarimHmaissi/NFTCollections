@@ -43,25 +43,27 @@ export default function Collection() {
       </Head>
       <main className={styles.container}>
         <div className={styles.root}>
-          <img
+          <Image
+            width={1200}
+            height={632}
             src={collection.coverImage}
             className={styles.coverImage}
             alt={collection.name}
           />
           <div className={styles.content}>
-            {/* <HandIcon /> */}
-
             <Typography className={styles.rockingHand}>🤘</Typography>
 
             <a href="https://uncommon.me/" className={styles.uncommonLink}>
-              <Typography variant="h3">uncommon.me</Typography>
+              <Typography className={styles.uncommonLinkText} variant="h3">
+                uncommon.me
+              </Typography>
             </a>
 
             <div className={styles.thumbnailWrapper}>
               <Image
                 src={collection.thumbnail}
-                width={80}
-                height={80}
+                width={85}
+                height={85}
                 alt={collection.thumbnail}
                 className={styles.thumbnail}
               />

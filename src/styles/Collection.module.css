@@ -6,12 +6,18 @@
 }
 
 .root {
+  --maxWidth: 1200px;
+  --aspectRatio: 1.9/1;
+  --cardPadding: 20px;
+  --borderRadius: 20px;
+  --fontColor: #ebebeb;
+
   position: relative;
   overflow: hidden;
-  max-width: 1200px;
+  max-width: var(--maxWidth);
   margin: auto;
   width: 100%;
-  aspect-ratio: 1.9/1;
+  aspect-ratio: var(--aspectRatio);
 }
 
 .root:hover .coverImage {
@@ -38,7 +44,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 2;
-  padding: 30px;
+  padding: var(--cardPadding);
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -56,12 +62,22 @@
   transition: opacity 0.25s;
 }
 
+.dataText,
+.dataTextValue {
+  line-height: 1.234;
+  font-size: 2rem;
+  color: var(--fontColor);
+}
+
 .dataTextValue {
   transition: transform 0.25s ease-in;
 }
 
 .dataWrapper:hover .data:not(:hover) {
   opacity: 0.7;
+}
+.dataWrapper:hover .data:not(:hover) .dataTextValue {
+  transform: scale(1);
 }
 
 .dataWrapper:hover .dataTextValue {
@@ -74,16 +90,12 @@
   margin-top: 12px;
 }
 
-.data-text {
-  font-size: 1.9rem;
-  transition: transform 0.25s;
-}
-
 .title {
   display: flex;
   align-items: center;
   font-size: 2.6rem;
   font-weight: 700;
+  color: var(--fontColor);
 }
 
 .coverImage:hover {
@@ -105,21 +117,20 @@
 }
 
 .thumbnail {
-  border-radius: 20px;
+  border-radius: var(--borderRadius);
 }
 
 .thumbnailWrapper {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
   transform: scale(1);
-  animation: pulse 2s infinite;
-  border-radius: 20px;
+  border-radius: var(--borderRadius);
   padding: 8px;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
-  height: 90px;
+  width: 95px;
+  height: 95px;
   margin-bottom: 10px;
 
   transition: transform 0.25s, visibility 0.25s ease-in;
@@ -127,6 +138,7 @@
 
 .thumbnailWrapper:hover {
   transform: scale(1.05);
+  animation: pulse 2s infinite;
 }
 
 .verifiedIcon {
@@ -139,23 +151,26 @@
   position: absolute;
   right: 0;
   top: 0;
-  padding: 30px;
+  padding: var(--cardPadding);
   color: white;
   opacity: 0.7;
-  font-size: 2.4rem;
   cursor: context-menu;
   transition: opacity 0.25s ease-in;
 }
 
 .uncommonLink:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+.uncommonLinkText {
+  font-size: 2.4rem;
 }
 
 .rockingHand {
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: 10px;
+  padding: var(--cardPadding);
   font-size: 4rem;
 }
 
@@ -163,4 +178,59 @@
   height: 1.4rem;
   width: 1.4rem;
   color: #858585;
+}
+
+@media (max-width: 860px) {
+  .title {
+    font-size: 1.9rem;
+  }
+  .dataText,
+  .dataTextValue {
+    font-size: 1.3rem;
+  }
+  .uncommonLinkText {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .dataText,
+  .dataTextValue {
+    font-size: 1.1rem;
+  }
+  .uncommonLinkText {
+    font-size: 1.5rem;
+  }
+  .rockingHand {
+    display: none;
+  }
+
+  .root {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    aspect-ratio: auto;
+  }
+
+  .content {
+    position: relative;
+  }
+
+  .coverImage {
+    position: relative;
+    aspect-ratio: var(--aspectRatio);
+  }
+
+  .thumbnailWrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
 }

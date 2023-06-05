@@ -4,10 +4,40 @@
   align-items: center;
 }
 
+.traitTitle {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.dataWrapper {
+  display: flex;
+}
+
 .data {
   display: flex;
   flex-direction: column;
   margin-right: 25px;
+}
+
+.dataValue {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.dataTitle {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.titleWrapper {
+  min-width: 90px;
+}
+
+.openseaIcon {
+  margin-right: 5px;
+  height: 1rem;
+  width: 1rem;
 }
 
 .items {
@@ -17,4 +47,27 @@
 .thumbnail {
   border-radius: 8px;
   margin-right: 20px;
+}
+
+@media (max-width: 640px) {
+  .root {
+    align-items: flex-start;
+  }
+
+  .dataWrapper {
+    flex-wrap: wrap;
+  }
+
+  .dataTitle {
+    margin-bottom: 5px;
+  }
+
+  .traitTitle {
+    margin-bottom: 5px;
+  }
+
+  .titleWrapper {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }

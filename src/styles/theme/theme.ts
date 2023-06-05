@@ -34,29 +34,11 @@ const themeOptions: ThemeOptions = {
     },
   },
   components: {
-    // MuiCssBaseline: {
-    //   styleOverrides: `
-    //       @font-face {
-    //         font-family: 'Moderat';
-    //         font-style: normal;
-    //         font-display: swap;
-    //         font-weight: 400;
-    //         src: local('Moderat'), local('Moderat-Regular'), url(${Moderat}) format('woff2');
-    //       }
-    //       @font-face {
-    //         font-family: 'Moderat';
-    //         font-style: normal;
-    //         font-display: swap;
-    //         font-weight: 500;
-    //         src: local('Moderat'), local('Moderat-Bold'), url(${Moderat}) format('woff2');
-    //       }
-    //     `,
-    // },
     MuiSelect: {
       styleOverrides: {
         select: {
           padding: "7px 12px 8px 12px",
-          paddingRight: "12px",
+          paddingRight: "12px !important", // Important needed here to override difficult to target MUI style
           color: "rgba(255, 255, 255, 0.36)",
         },
       },

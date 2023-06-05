@@ -53,7 +53,9 @@ export const Traits = ({ traits }: TraitsProps) => {
   return (
     <section className={styles.root}>
       <div className={styles.header}>
-        <Typography variant="h4">Top traits</Typography>
+        <Typography className={styles.heading} variant="h4">
+          Top traits
+        </Typography>
         <Select
           labelId="sorted-by"
           id="traits-sort"
@@ -70,8 +72,9 @@ export const Traits = ({ traits }: TraitsProps) => {
       </div>
 
       <Typography>
-        The Collection Name NFT collection has {totalCount} unique traits among{" "}
-        {categoryCount} trait categories.
+        The Collection Name NFT collection has{" "}
+        <strong>{totalCount} unique traits</strong> among{" "}
+        <strong>{categoryCount} trait categories.</strong>
       </Typography>
 
       <ul className={styles.traitList}>
