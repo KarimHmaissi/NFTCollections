@@ -23,7 +23,6 @@
 }
 
 .traitListItem {
-  margin-bottom: 16px;
   padding: 16px;
   border-radius: 4px;
 }
@@ -35,10 +34,6 @@
 }
 
 @media (max-width: 600px) {
-  .traitListItem {
-    margin-bottom: 0;
-  }
-
   .traitListItem:first-child {
     padding-top: 0;
   }

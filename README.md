@@ -16,3 +16,13 @@
 
 - The second solution is built on a `/collection` page with a hardcoded collection object
 - On mobile the content drops underneath the image
+
+
+### Todo on a real project
+
+-  Write unit tests for the components, service layer transforms and utils
+- Write integration tests for the pages
+- Write pact contract tests for the two endpoints used
+- Create a docker image for deployment
+- Create pipeline scripts
+- Add husky pre commit/push hooks to run linting, tests and build

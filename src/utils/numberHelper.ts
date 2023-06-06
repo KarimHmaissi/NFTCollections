@@ -10,6 +10,7 @@ export const convertToShortForm = (num: number): string => {
 };
 
 export const convertToPercentage = (value: number): string => {
-  const percentage = Math.round(value * 100);
-  return `${percentage}%`;
+  const sign = value >= 0 ? "+" : "-";
+  const percentage = Math.abs(Math.round(value * 100));
+  return `${sign}${percentage}%`;
 };
