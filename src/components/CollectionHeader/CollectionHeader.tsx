@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -17,10 +18,10 @@ const CollectionHeaderData = ({ collectionId }: CollectionHeaderProps) => {
   const { data: collection } = useGetCollectionData(collectionId);
 
   return (
-    <Grid item xs={12} md={6} className={styles.finDetails}>
+    <div className={styles.data}>
       {collection && (
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
+        <>
+          <div className={clsx(styles.dataWrapper, styles.floor)}>
             <Typography
               color="grey.500"
               variant="body2"
@@ -39,8 +40,8 @@ const CollectionHeaderData = ({ collectionId }: CollectionHeaderProps) => {
                 {collection.floorPriceDelta}
               </Typography>
             </Typography>
-          </Grid>
-          <Grid item xs={4}>
+          </div>
+          <div className={clsx(styles.dataWrapper, styles.volume)}>
             <Typography
               color="grey.500"
               variant="body2"
@@ -59,8 +60,8 @@ const CollectionHeaderData = ({ collectionId }: CollectionHeaderProps) => {
                 {collection.volume24hDelta}
               </Typography>
             </Typography>
-          </Grid>
-          <Grid item xs={4}>
+          </div>
+          <div className={styles.dataWrapper}>
             <Typography
               color="grey.500"
               variant="body2"
@@ -71,10 +72,10 @@ const CollectionHeaderData = ({ collectionId }: CollectionHeaderProps) => {
             <Typography variant="h6">
               {collection.marketCap} <Eth />
             </Typography>
-          </Grid>
-        </Grid>
+          </div>
+        </>
       )}
-    </Grid>
+    </div>
   );
 };
 
@@ -88,7 +89,7 @@ export const CollectionHeader = ({ collectionId }: CollectionHeaderProps) => {
     <section className={styles.root}>
       {collection && (
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <div className={styles.header}>
               <Image
                 src={collection.thumbnail}

@@ -134,6 +134,12 @@ export default function Home() {
                   build
                 </Typography>
               </li>
+              <li>
+                <Typography gutterBottom>
+                  Further optimizations to the traits components. Use selector
+                  to prevent unnecessary rerenders
+                </Typography>
+              </li>
             </ul>
           </div>
         </Container>

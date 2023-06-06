@@ -175,8 +175,8 @@
 }
 
 .ethIcon {
-  height: 1.4rem;
-  width: 1.4rem;
+  height: 1.6rem;
+  width: 1.6rem;
   color: #858585;
 }
 
@@ -191,12 +191,23 @@
   .uncommonLinkText {
     font-size: 2rem;
   }
+
+  .ethIcon {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
 }
 
 @media (max-width: 640px) {
   .title {
     font-size: 1.5rem;
   }
+
+  .dataTextValue {
+    display: flex;
+    align-items: center;
+  }
+
   .dataText,
   .dataTextValue {
     font-size: 1.1rem;
@@ -232,5 +243,10 @@
   .thumbnail {
     width: 60px;
     height: 60px;
+  }
+
+  .ethIcon {
+    height: 1.2rem;
+    width: 1.2rem;
   }
 }

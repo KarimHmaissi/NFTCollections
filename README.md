@@ -26,3 +26,4 @@
 - Create a docker image for deployment
 - Create pipeline scripts
 - Add husky pre commit/push hooks to run linting, tests and build
+- Further optimizations to the traits components. Use selector to prevent unnecessary rerenders 

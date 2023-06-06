@@ -3,17 +3,23 @@ import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-import { TraitsResponse } from "nftCollections/services/getTraits";
 import { Trait } from "../Trait";
 import styles from "./Traits.module.css";
+import { TraitsLoading } from "../TraitsLoading";
+import { useGetTraits } from "nftCollections/services/getTraits/query";
 
 interface TraitsProps {
-  traits: TraitsResponse;
+  collectionId: string;
 }
 
-export const Traits = ({ traits }: TraitsProps) => {
+export const Traits = ({ collectionId }: TraitsProps) => {
   const [selectedOption, setSelectedOption] = useState("Trait floor");
-  console.log("Rendering", selectedOption);
+
+  const { data: traits, isLoading } = useGetTraits(collectionId);
+
+  if (isLoading || !traits) {
+    return <TraitsLoading />;
+  }
 
   const handleSortChange = (event: SelectChangeEvent<string>) => {
     setSelectedOption(event.target.value);

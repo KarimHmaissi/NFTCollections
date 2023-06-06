@@ -1,26 +1,22 @@
-import Head from "next/head";
-import { GetServerSideProps } from "next";
-import { dehydrate } from "@tanstack/query-core";
-import { useRouter } from "next/router";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
+import { dehydrate } from "@tanstack/query-core";
+import { GetServerSideProps } from "next";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
+import { CollectionHeader } from "nftCollections/components/CollectionHeader/CollectionHeader";
+import { Traits } from "nftCollections/components/Traits";
 import {
   prefetchCollection,
   useGetCollectionSeo,
 } from "nftCollections/services/getCollection/query";
-import { CollectionHeader } from "nftCollections/components/CollectionHeader/CollectionHeader";
-import { useGetTraits } from "nftCollections/services/getTraits/query";
-import { Traits } from "nftCollections/components/Traits";
-import { TraitsLoading } from "nftCollections/components/TraitsLoading";
 import styles from "nftCollections/styles/Collections.module.css";
 
 export default function Collection() {
   const router = useRouter();
   const { collectionId } = router.query;
   const { data: collection } = useGetCollectionSeo(collectionId as string);
-
-  const { data: traits, isLoading } = useGetTraits(collectionId as string);
 
   return (
     <>
@@ -34,8 +30,7 @@ export default function Collection() {
         <Container className={styles.root}>
           <CollectionHeader collectionId={collectionId as string} />
           <Divider className={styles.divider} />
-          {traits && <Traits traits={traits} />}
-          {isLoading && <TraitsLoading />}
+          <Traits collectionId={collectionId as string} />
         </Container>
       </main>
     </>

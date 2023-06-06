@@ -1,5 +1,6 @@
 .root {
   margin-top: 32px;
+  max-width: var(--maxWidth);
 }
 
 .divider {
