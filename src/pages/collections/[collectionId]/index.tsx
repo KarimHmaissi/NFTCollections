@@ -7,7 +7,7 @@ import Divider from "@mui/material/Divider";
 
 import {
   prefetchCollection,
-  useGetCollection,
+  useGetCollectionSeo,
 } from "nftCollections/services/getCollection/query";
 import { CollectionHeader } from "nftCollections/components/CollectionHeader/CollectionHeader";
 import { useGetTraits } from "nftCollections/services/getTraits/query";
@@ -18,21 +18,21 @@ import styles from "nftCollections/styles/Collections.module.css";
 export default function Collection() {
   const router = useRouter();
   const { collectionId } = router.query;
-  const { data: collection } = useGetCollection(collectionId as string);
+  const { data: collection } = useGetCollectionSeo(collectionId as string);
 
   const { data: traits, isLoading } = useGetTraits(collectionId as string);
 
   return (
     <>
       <Head>
-        <title>{collection?.result.name}</title>
-        <meta name="description" content={`${collection?.result.name} page`} />
+        <title>{collection?.name}</title>
+        <meta name="description" content={`${collection?.name} page`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <Container className={styles.root}>
-          {collection && <CollectionHeader collection={collection} />}
+          <CollectionHeader collectionId={collectionId as string} />
           <Divider className={styles.divider} />
           {traits && <Traits traits={traits} />}
           {isLoading && <TraitsLoading />}
